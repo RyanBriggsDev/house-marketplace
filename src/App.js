@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import PrivateRoute from "./Components/PrivateRoute";
 import Navbar from "./Components/Navbar";
 import Explore from './pages/Explore'
 import Offers from './pages/Offers'
@@ -21,7 +22,9 @@ function App() {
           <Route path='/offers' element={<Offers />} />
           <Route path='/sign-in' element={<SignIn />} />
           <Route path='/sign-up' element={<SignUp />} />
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/profile' element={<PrivateRoute />}>
+            <Route path='/profile' element={<Profile />} />
+          </Route>
           <Route path='/forgot-password' element={<ForgotPassword />} />
         </Routes>
           <Navbar />

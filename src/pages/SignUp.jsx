@@ -7,6 +7,7 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase
 import { db } from '../firebase.config'
 import { async } from "@firebase/util"
 import { setDoc, doc, serverTimestamp } from 'firebase/firestore'
+import OAuth from "../Components/OAuth"
 
 function SignUp() {
 
@@ -91,6 +92,7 @@ function SignUp() {
           </form>
 
           {/* Google OAuth */}
+          <OAuth />
 
           <Link to='/sign-in' className="registerLink">
             Sign In Instead
