@@ -1,4 +1,4 @@
-import { getAuth, updateAuth, updateProfile } from 'firebase/auth'
+import { getAuth, updateProfile } from 'firebase/auth'
 import { updateDoc, doc } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { useState } from 'react'
@@ -22,8 +22,6 @@ function Profile() {
     auth.signOut()
     navigate('/')
   }
-
-  
 
   const onChange = (e) => {
     setFormData((prevState) => ({
