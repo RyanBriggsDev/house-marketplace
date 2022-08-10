@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom"
 import { ReactComponent as DeleteIcon } from '../../src/assets/svg/deleteIcon.svg'
+import { ReactComponent as EditIcon } from '../../src/assets/svg/editIcon.svg'
 import BedIcon from '../../src/assets/svg/bedIcon.svg'
 import BathtubIcon from '../../src/assets/svg/bathtubIcon.svg'
 
-function ListingItem({listing, id, onDelete}) {
+function ListingItem({listing, id, onDelete, onEdit}) {
 
   return (
     <li className="categoryListing">
         <Link 
-            to={`/category/${listing.type}/${id}`} 
+            to={`/category/${listing.type}/${id}%7d`} 
             className='categoryListingLink'
         >
             <img 
@@ -53,6 +54,7 @@ function ListingItem({listing, id, onDelete}) {
             fill="rgb(231,76,60)"
             onClick={() => onDelete(listing.id, listing.name)}/>
         )}
+        {onEdit && <EditIcon className="editIcon" onClick={() => onEdit(id)} />}
     </li>
   )
 }

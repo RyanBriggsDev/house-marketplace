@@ -5,7 +5,6 @@ import visibilityIcon from '../assets/svg/visibilityIcon.svg'
 // firebase
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { db } from '../firebase.config'
-import { async } from "@firebase/util"
 import { setDoc, doc, serverTimestamp } from 'firebase/firestore'
 import OAuth from "../Components/OAuth"
 
